@@ -4,7 +4,12 @@
   "author": "Greg Freitas",
   "license": "MIT",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.342.0",
+    "@aws-sdk/lib-dynamodb": "^3.342.0",
     "aws-lambda": "^1.0.7"
+  },
+  "scripts": {
+    "build": "rm -rf dist && esbuild ./src/lambda-handlers/* --entry-names=[dir]/[name]/index --bundle --minify --platform=node --target=node18.14 --outdir=dist"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.115",
